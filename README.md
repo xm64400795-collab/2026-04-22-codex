@@ -1,118 +1,56 @@
-# 2026-04-22-codex
+# 《菌群觉醒》项目仓库
 
-这是一个用于双电脑同步的 Git 项目仓库。
+这个仓库现在用于集中管理《菌群觉醒》的策划文档、执行说明和后续制作产物。
 
-## 这个仓库是做什么的
+当前第一批已整理入库的内容，聚焦在“梦序章”章节，包含流程图、总策划、程序说明、美术说明、美术 AI 提示词和音频说明。
 
-你可以在电脑 A 和电脑 B 上都使用这个仓库，通过 GitHub 同步项目文件。
+## 当前重点
 
-推荐使用方式：
+- 章节：`梦序章`
+- 目标：把现有文档沉淀为可协作、可追踪、可继续扩展的项目基础仓库
+- 当前内容类型：策划文档与制作说明
 
-1. 两台电脑都安装 Git。
-2. 两台电脑都把这个仓库克隆到本地。
-3. 开始工作前先拉取最新内容。
-4. 修改完成后提交并推送到 GitHub。
-
-## 仓库地址
-
-GitHub:
-
-`https://github.com/xm64400795-collab/2026-04-22-codex.git`
-
-## 第二台电脑如何接入
-
-先打开 PowerShell，然后执行：
-
-```powershell
-cd D:\work
-git clone https://github.com/xm64400795-collab/2026-04-22-codex.git
-```
-
-执行完成后，你会得到本地项目目录：
+## 仓库结构
 
 ```text
-D:\work\2026-04-22-codex
+2026-04-22-codex/
+├─ docs/
+│  └─ dream-prologue/
+│     ├─ README.md
+│     ├─ flow/
+│     ├─ design/
+│     ├─ program/
+│     ├─ art/
+│     └─ audio/
+├─ .gitignore
+└─ README.md
 ```
 
-以后就在这个目录里工作。
+## 文档入口
 
-## 每次开始工作前
+- [梦序章文档总览](docs/dream-prologue/README.md)
+- [18 节点关卡流程图](docs/dream-prologue/flow/梦序章_18节点关卡流程图_执行版.md)
+- [美术资源清单表](docs/dream-prologue/flow/梦序章_美术资源清单表_v1.md)
 
-进入项目目录：
+## 协作约定
 
-```powershell
-cd D:\work\2026-04-22-codex
-```
+1. 开始工作前先执行 `git pull`。
+2. 修改完成后先看 `git status`，确认只提交本次相关内容。
+3. 提交时尽量写清楚这次改了什么，比如：`补充梦序章程序说明`、`更新美术资源表`。
+4. 不要把密码、密钥、隐私配置或临时缓存提交进仓库。
 
-拉取最新代码：
+常用命令：
 
 ```powershell
 git pull
-```
-
-## 每次修改完成后
-
-先查看状态：
-
-```powershell
 git status
-```
-
-加入本次修改：
-
-```powershell
-git add .
-```
-
-提交修改：
-
-```powershell
-git commit -m "写一句这次改了什么"
-```
-
-推送到 GitHub：
-
-```powershell
-git push
-```
-
-## 最常用的四个命令
-
-```powershell
-git pull
 git add .
 git commit -m "本次修改说明"
 git push
 ```
 
-你可以把它理解成：
+## 下一步建议
 
-- `git pull`：先拿到最新版本
-- `git add .`：把这次改动加入提交范围
-- `git commit -m "..."`：保存一次修改记录
-- `git push`：上传到 GitHub
-
-## 使用规则
-
-- 同一时间尽量只在一台电脑上改同一个文件。
-- 开工前先执行 `git pull`。
-- 改完后记得执行 `git push`。
-- 不要把密码、密钥、隐私配置直接提交到仓库。
-
-## 建议放进仓库的内容
-
-- 源代码
-- 文档
-- 脚本
-- 图片素材
-- 配置模板
-
-## 不建议提交的内容
-
-- `node_modules/`
-- `.venv/`
-- `.env`
-- 日志文件
-- 构建缓存
-
-这些内容已经在 [`.gitignore`](C:\Users\Administrator\Documents\Codex\2026-04-22-codex\.gitignore) 里做了基础排除。
+- 把“梦序章”拆成程序、美术、音频的任务清单
+- 增加实际产物目录，例如程序工程、美术源文件导出目录、音频交付目录
+- 在文档稳定后补充章节排期和里程碑
